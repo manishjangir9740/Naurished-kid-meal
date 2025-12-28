@@ -67,7 +67,7 @@ export default function Hero() {
     >
       <div
         ref={contentRef}
-        className="relative z-60 mx-auto max-w-[1400px] px-6 md:px-10 pt-32 md:pt-44 pb-20 md:pb-60 "
+        className="relative z-60 mx-auto max-w-[1400px] pl-6 md:px-10 pt-32 md:pt-44 pb-20 md:pb-60 "
       >
         <div className="relative flex flex-col lg:flex-row items-center lg:items-start">
 
@@ -142,12 +142,12 @@ export default function Hero() {
           {/* RIGHT IMAGE */}
           <div
             ref={imageWrapRef}
-            className="hidden lg:flex justify-center lg:justify-end relative"
+            className="hidden lg:flex justify-center w-full lg:justify-end relative"
           >
             <img
               src={`/Naurished-kid-meal/assets/hero-boy.png`}
               alt="Happy kid with meal"
-              className="max-w-[1000px] xl:max-w-[800px] 2xl:max-w-[900px] w-full object-contain"
+              className="max-w-[1200px] xl:max-w-[800px] 2xl:max-w-[900px] w-full object-contain"
             />
           </div>
 
