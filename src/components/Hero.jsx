@@ -145,7 +145,7 @@ export default function Hero() {
             className="hidden lg:flex justify-center lg:justify-end relative"
           >
             <img
-              src="/assets/hero-boy.png"
+              src={`/Naurished-kid-meal/assets/hero-boy.png`}
               alt="Happy kid with meal"
               className="max-w-[1000px] xl:max-w-[800px] 2xl:max-w-[900px] w-full object-contain"
             />
@@ -156,7 +156,7 @@ export default function Hero() {
 
       {/* Wave Bottom */}
       <img
-        src="/assets/wave-bottom.png" 
+        src={`/Naurished-kid-meal/assets/wave-bottom.png`} 
         className="absolute bottom-0 w-full select-none pointer-events-none" 
         alt=""
       />

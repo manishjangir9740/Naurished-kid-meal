@@ -77,7 +77,7 @@ export default function Section6() {
       ref={sectionRef}
       className="relative py-40 -mt-[120px] "
       style={{
-        backgroundImage: "url('/assets/section5/backgroungimage5.jpg')",
+        backgroundImage: "url('/Naurished-kid-meal/assets/section5/backgroungimage5.jpg')",
         backgroundSize: "cover",    
         backgroundPosition: "center",
       }}
@@ -92,7 +92,7 @@ export default function Section6() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 flex justify-center items-center"
             style={{
-              backgroundImage: "url('/assets/section6/Vector 7.png')",
+              backgroundImage: "url('/Naurished-kid-meal/assets/section6/Vector 7.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -180,7 +180,7 @@ export default function Section6() {
           <div className="mt-2 flex items-center justify-center gap-3">
             <div className="h-[40px] w-[40px] rounded-full bg-[#D9D9D9] flex items-center justify-center overflow-hidden">
             <img
-              src="/assets/tttt.jpg"
+              src={`/Naurished-kid-meal/assets/tttt.jpg`}
               alt="Happy kid with meal"
               className=" w-full object-contain"
             />

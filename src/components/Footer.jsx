@@ -25,7 +25,7 @@ export default function Footer() {
     <footer
       className="relative text-white"
       style={{
-        backgroundImage: "url('/assets/wave for footer.png')",
+        backgroundImage: "url('/Naurished-kid-meal/assets/wave for footer.png')",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "top center",
         backgroundSize: "cover",
@@ -39,7 +39,7 @@ export default function Footer() {
             <div>
               <div className="flex items-start gap-3">
                 <img
-                  src="/assets/logo.png"
+                  src={`/Naurished-kid-meal/assets/logo.png`}
                   alt="Nourished"
                   className="h-12 w-12"
                 />
@@ -57,7 +57,7 @@ export default function Footer() {
                   className={iconWrap}
                 >
                   <img
-                    src="/assets/socailmediaicon/facebook (1).png"
+                    src={`/Naurished-kid-meal/assets/socailmediaicon/facebook (1).png`}
                     alt=""
                     className="h-6 w-6"
                   />
@@ -68,7 +68,7 @@ export default function Footer() {
                   className={iconWrap}
                 >
                   <img
-                    src="/assets/socailmediaicon/insta.png"
+                    src={`/Naurished-kid-meal/assets/socailmediaicon/insta.png`}
                     alt=""
                     className="h-6 w-6"
                   />
@@ -79,7 +79,7 @@ export default function Footer() {
                   className={iconWrap}
                 >
                   <img
-                    src="/assets/socailmediaicon/x.png"
+                    src={`/Naurished-kid-meal/assets/socailmediaicon/x.png`}
                     alt=""
                     className="h-5 w-5"
                   />

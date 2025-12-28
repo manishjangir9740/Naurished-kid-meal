@@ -26,7 +26,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <img
-          src="/assets/logo.png"
+          src="/Naurished-kid-meal/assets/logo.png"
           alt="Nourished"
           className="h-14 w-14 md:h-16 md:w-16"
         />

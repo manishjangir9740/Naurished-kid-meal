@@ -156,7 +156,7 @@ export default function Section2() {
 >
   <div className="relative">
     <img
-      src="/assets/section2/bgthinking.png"
+      src={`/Naurished-kid-meal/assets/section2/bgthinking.png`}
       alt="Thought bubble"
       className="w-full h-auto object-contain drop-shadow-2xl"
     />
@@ -165,7 +165,7 @@ export default function Section2() {
     <div className="absolute top-[9%] left-[18%] right-[10%] ">
       <img
         ref={lunchboxRef}
-        src="/assets/section2/birefnet.png"
+        src={`/Naurished-kid-meal/assets/section2/birefnet.png`}
         alt="Meal box"
         className="w-full h-full object-contain"
       />
@@ -176,7 +176,7 @@ export default function Section2() {
 
             {/* Woman with phone */}
             <img
-              src="/assets/section2/inspyrenet.png"
+              src={`/Naurished-kid-meal/assets/section2/inspyrenet.png`}
               alt="Parent using app"
               className="relative z-10 w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[500px] mx-auto lg:mx-0 object-contain"
             />
@@ -190,7 +190,7 @@ export default function Section2() {
               className="pointer-events-none absolute -top-[90px] right-[-56px] sm:right-[-72px] md:right-[-96px] lg:right-[-110px] w-[180px] sm:w-[220px] md:w-[260px] lg:w-[300px] opacity-95 hidden sm:block z-10"
             >
               <img
-                src="/assets/section2/toonout.png"
+                src={`/Naurished-kid-meal/assets/section2/toonout.png`}
                 alt="Decorative meals"
                 className="w-full h-auto object-contain drop-shadow-2xl"
               />

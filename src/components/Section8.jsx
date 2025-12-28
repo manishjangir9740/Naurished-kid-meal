@@ -50,7 +50,7 @@ export default function Section8() {
       <div
   className="relative mx-auto w-full overflow-hidden"
   style={{
-    backgroundImage: "url('/assets/wave for 8th section.png')",
+    backgroundImage: "url('/Naurished-kid-meal/assets/wave for 8th section.png')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center bottom",
     backgroundSize: "100% 93%",
@@ -58,7 +58,7 @@ export default function Section8() {
   }}
 >
 <img
-  src="/assets/section8/inspyrenet2.png"
+  src={`/Naurished-kid-meal/assets/section8/inspyrenet2.png`}
   alt="Child holding a lunchbox"
   className="
     pointer-events-none
@@ -88,7 +88,7 @@ export default function Section8() {
             {/* Mobile image */}
             <div className="mb-8 flex justify-center md:hidden">
               <img
-                src="/assets/section8/inspyrenet2.png"
+                src={`/Naurished-kid-meal/assets/section8/inspyrenet2.png`}
                 alt="Child holding a lunchbox"
                 className="h-[260px] w-auto"
               />

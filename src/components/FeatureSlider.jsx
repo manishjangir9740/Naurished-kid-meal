@@ -5,17 +5,17 @@ const slides = [
   {
     title: "Verified Delivery",
     desc: "Meals handed only after QR scan confirmation.",
-    image: "/assets/slide/1.png",
+    image: "/Naurished-kid-meal/assets/slide/1.png",
   },
   {
     title: "Hygienic Handling",
     desc: "Prepared and packed under strict hygiene standards.",
-    image: "/assets/slide/2.png",
+    image: "/Naurished-kid-meal/assets/slide/2.png",
   },
   {
     title: "On-Time Delivery",
     desc: "Delivered fresh before lunch time.",
-    image: "/assets/slide/3.png",
+    image: "/Naurished-kid-meal/assets/slide/3.png",
   },
 ];
 

@@ -104,7 +104,7 @@ export default function Section5() {
 
         {/* Beige wave mask (top + bottom curves + soft shadow) */}
         <img
-          src="/assets/wave for 5th section.png"
+          src={`/Naurished-kid-meal/assets/wave for 5th section.png`}
           alt=""
           draggable="false"
           className="absolute inset-0 w-[100%] object-fill pointer-events-none h-full select-none"
@@ -189,7 +189,7 @@ export default function Section5() {
 
               {/* Plate on hover */}
               <img
-  src="/assets/plate.png"
+  src={`/Naurished-kid-meal/assets/plate.png`}
   alt=""
   className="
     pointer-events-none
@@ -262,7 +262,7 @@ export default function Section5() {
 
               {/* Plate on hover */}
               <img
-                src="/assets/plate.png"
+                src={`/Naurished-kid-meal/assets/plate.png`}
                 alt=""
                 className="
                   pointer-events-none
@@ -333,7 +333,32 @@ export default function Section5() {
             </div>
 
             {/* Monthly */}
-            <div className="rounded-[20px] bg-gradient-to-b from-[#F3F3F3] to-[#DCDCDC] py-4 px-4  shadow-inner border border-black/5 hover:-translate-y-1 transition-transform">
+            <div className="relative group overflow-visible">
+
+              {/* Plate on hover */}
+              <img
+                src={`/Naurished-kid-meal/assets/plate.png`}
+                alt=""
+                className="
+                  pointer-events-none
+                  absolute
+                  -top-25
+                  left-1/2
+                  -translate-x-1/2
+                  opacity-0
+                  translate-y-4
+                  transition-all
+                  duration-400
+                  ease-out
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                  z-1
+
+                "
+              />
+
+              {/* Card */}
+              <div className="relative z-10 rounded-[20px] bg-gradient-to-b from-[#F3F3F3] to-[#DCDCDC] py-4 px-4  shadow-inner border border-black/5 hover:-translate-y-1 transition-transform">
               <div className="flex justify-end ">
                 <span className="rounded-full bg-[#B781E8] py-2 px-4 text-white "
                   style={{ fontFamily: "'SK Synonym Grotesk Trial', sans-serif", fontWeight: 600, fontSize: "12px" }}
@@ -377,9 +402,11 @@ export default function Section5() {
               >
                 Subscribe Now
               </button>
+              </div>
+
             </div>
-          </div>
         </div>
+      </div>
       </div>
     </section>
   );

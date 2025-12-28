@@ -38,7 +38,7 @@ export default function Loader() {
               className="mb-8"
             >
               <motion.img
-                src="/assets/logo.png"
+                src={`/Naurished-kid-meal/assets/logo.png`}
                 alt="Nourished"
                 className="w-24 h-24 mx-auto"
                 animate={{

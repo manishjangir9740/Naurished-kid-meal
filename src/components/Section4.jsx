@@ -84,7 +84,7 @@ export default function Section4() {
           <div
             className="absolute top-0 inset-0  h-full bg-no-repeat bg-cover"
             style={{
-              backgroundImage: "url('/assets/section4/bg_images.jpg')",
+              backgroundImage: "url('/Naurished-kid-meal/assets/section4/bg_images.jpg')",
               backgroundPosition: "right center",
             }}
           />

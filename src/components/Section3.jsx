@@ -101,7 +101,7 @@ export default function Section3() {
     >
       {/* White Wave Top */}
       <img
-        src="/assets/white wave 3rd section.png"
+        src={`/Naurished-kid-meal/assets/white wave 3rd section.png`}
         className="absolute top-0 left-0 w-full h-full select-none pointer-events-none z-10 block"
         style={{ display: 'block', verticalAlign: 'top' }}
         alt=""
@@ -170,7 +170,7 @@ export default function Section3() {
             {/* Circular Image */}
             <div className="mb-8 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] lg:w-[320px] lg:h-[320px] md:-mt-8 transition-transform duration-500 group-hover:scale-105">
               <img
-                src="/assets/section3/Group 2.png"
+                src={`/Naurished-kid-meal/assets/section3/Group 2.png`}
                 alt="Little Explorers"
                 className="w-full object-cover"
               />
@@ -220,7 +220,7 @@ export default function Section3() {
             {/* Circular Image */}
             <div className="mb-8 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] lg:w-[320px] lg:h-[320px] md:mt-16 transition-transform duration-500 group-hover:scale-105">
               <img
-                src="/assets/section3/Group 3.png"
+                src={`/Naurished-kid-meal/assets/section3/Group 3.png`}
                 alt="Bright Movers"
                 className="w-full h-auto object-cover"
               />
@@ -270,7 +270,7 @@ export default function Section3() {
             {/* Circular Image */}
             <div className="mb-13 w-[240px] h-[240px] sm:w-[280px] sm:h-[280px] lg:w-[320px] lg:h-[320px] md:-mt-8 transition-transform duration-500 group-hover:scale-105">
               <img
-                src="/assets/section3/Group 4.png"
+                src={`/Naurished-kid-meal/assets/section3/Group 4.png`}
                 alt="Teen Power Pack"
                 className="w-full h-auto object-cover"
               />

@@ -2,34 +2,34 @@ import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const items = [
-  { src: "/assets/floating/bread.png", top: "19%", left: "-7%", size: 200, d: 0.015, rotate: -15, delay: 0.1 },
+  { src: "/Naurished-kid-meal/assets/floating/bread.png", top: "19%", left: "-7%", size: 200, d: 0.015, rotate: -15, delay: 0.1 },
   // LEFT SIDE
-  { src: "/assets/floating/tomato-full.png", top: "75%", left: "-2%", size: 150, d: 0.018, rotate: 10, delay: 0.3 },
+  { src: "/Naurished-kid-meal/assets/floating/tomato-full.png", top: "75%", left: "-2%", size: 150, d: 0.018, rotate: 10, delay: 0.3 },
 
   // CENTER LEFT
-  { src: "/assets/floating/leaf-2.png", top: "18%", left: "18%", size: 85, d: 0.02, rotate: 15, delay: 0.5 },
-  { src: "/assets/floating/graps.png", top: "18%", left: "40%", size: 85, d: 0.02, rotate: 15, delay: 0.5 },
+  { src: "/Naurished-kid-meal/assets/floating/leaf-2.png", top: "18%", left: "18%", size: 85, d: 0.02, rotate: 15, delay: 0.5 },
+  { src: "/Naurished-kid-meal/assets/floating/graps.png", top: "18%", left: "40%", size: 85, d: 0.02, rotate: 15, delay: 0.5 },
 
   // CENTER
-  { src: "/assets/floating/tomato-slice.png", top: "45%", left: "48%", size: 70, d: 0.016, rotate: 8, delay: 0.9 },
+  { src: "/Naurished-kid-meal/assets/floating/tomato-slice.png", top: "45%", left: "48%", size: 70, d: 0.016, rotate: 8, delay: 0.9 },
 
   // CENTER RIGHT
-  { src: "/assets/floating/leaf-2.png", top: "23%", left: "55%", size: 80, d: 0.019, rotate: -8, delay: 0.5 },
-  { src: "/assets/floating/grapes.png", top: "27%", left: "70%", size: 120, d: 0.021, rotate: 12, delay: 0.8 },
+  { src: "/Naurished-kid-meal/assets/floating/leaf-2.png", top: "23%", left: "55%", size: 80, d: 0.019, rotate: -8, delay: 0.5 },
+  { src: "/Naurished-kid-meal/assets/floating/grapes.png", top: "27%", left: "70%", size: 120, d: 0.021, rotate: 12, delay: 0.8 },
   
   // RIGHT SIDE
-  { src: "/assets/floating/broccoli-1.png", top: "35%", left: "68%", size: 70, d: 0.019, rotate: -8, delay: 0.5 },
-  { src: "/assets/floating/broccoli-2.png", top: "40%", left: "77%", size: 150, d: 0.025, rotate: 20, delay: 0.7 },
-  { src: "/assets/floating/bbb.png", top: "8%", left: "90%", size: 320, d: 0.023, rotate: -25, delay: 0.8 },
+  { src: "/Naurished-kid-meal/assets/floating/broccoli-1.png", top: "35%", left: "68%", size: 70, d: 0.019, rotate: -8, delay: 0.5 },
+  { src: "/Naurished-kid-meal/assets/floating/broccoli-2.png", top: "40%", left: "77%", size: 150, d: 0.025, rotate: 20, delay: 0.7 },
+  { src: "/Naurished-kid-meal/assets/floating/bbb.png", top: "8%", left: "90%", size: 320, d: 0.023, rotate: -25, delay: 0.8 },
 
   // BOTTOM RIGHT
-  { src: "/assets/floating/lllll.png", top: "80%", left: "85%", size: 255, d: 0.016, rotate: -5, delay: 1.1 },
+  { src: "/Naurished-kid-meal/assets/floating/lllll.png", top: "80%", left: "85%", size: 255, d: 0.016, rotate: -5, delay: 1.1 },
 
   // BOTTOM LEFT
   // { src: "/assets/floating/carrot.png", top: "45%", left: "80%", size: 160, d: 0.017, rotate: 15, delay: 1.0 },
-  { src: "assets/floating/graps.png", top: "60%", left: "40%", size: 70, d: 0.017, rotate: 15, delay: 1.0 },
-  { src: "assets/floating/leaf-1.png", top: "70%", left: "45%", size: 85, d: 0.017, rotate: 15, delay: 1.0 },
-  { src: "assets/floating/akarot (1).png", top: "86%", left: "37%", size: 370, d: 0.017, rotate: 15, delay: 1.0 },
+  { src: "/Naurished-kid-meal/assets/floating/graps.png", top: "60%", left: "40%", size: 70, d: 0.017, rotate: 15, delay: 1.0 },
+  { src: "/Naurished-kid-meal/assets/floating/leaf-1.png", top: "70%", left: "45%", size: 85, d: 0.017, rotate: 15, delay: 1.0 },
+  { src: "/Naurished-kid-meal/assets/floating/akarot (1).png", top: "86%", left: "37%", size: 370, d: 0.017, rotate: 15, delay: 1.0 },
   
 ];
 
