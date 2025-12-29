@@ -97,13 +97,12 @@ export default function AgeGroupsMenu() {
   return (
     <section
       ref={sectionRef}
-      className="relative md:py-30"
+      className="relative md:py-25 z-10"
     >
       {/* White Wave Top */}
       <img
         src={`/Naurished-kid-meal/assets/white wave 3rd section.png`}
-        className="absolute top-0 left-0 w-full h-full select-none pointer-events-none z-10 block"
-        style={{ display: 'block', verticalAlign: 'top' }}
+        className="absolute top-0 left-0 w-full h-auto select-none pointer-events-none z-10"
         alt=""
       />
 

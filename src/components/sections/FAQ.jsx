@@ -39,7 +39,7 @@ function CloseIcon({ className = "" }) {
 }
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(1); // match screenshot: 2nd item opened by default
+  const [openIndex, setOpenIndex] = useState(-1); // start with no FAQ opened
 
   const faqs = useMemo(
     () => [

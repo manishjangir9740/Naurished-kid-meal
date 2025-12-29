@@ -176,6 +176,12 @@ export default function MealBuilder() {
               src={`/Naurished-kid-meal/assets/section2/inspyrenet.png`}
               alt="Parent using app"
               className="relative z-10 w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[500px] mx-auto lg:mx-0 object-contain"
+              style={{
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, black 94%, transparent 98%)",
+                maskImage:
+                  "linear-gradient(to bottom, black 94%, transparent 98%)",
+              }}
             />
           </div>
 
@@ -200,7 +206,7 @@ export default function MealBuilder() {
                   fontSize: "clamp(32px, 5vw, 48px)",
                   lineHeight: "1.2",
                 }}
-                className="text-black mb-6"
+                className="text-black mb-6 text-center lg:text-left"
               >
                 Build Your Kid Perfect Meal Box
               </h2>
@@ -212,17 +218,38 @@ export default function MealBuilder() {
                   fontSize: "clamp(16px, 2vw, 18px)",
                   lineHeight: "1.7",
                 }}
-                className="text-gray-700 mb-8 max-w-[550px]"
+                className="text-gray-700 mb-8 max-w-[550px] text-center lg:text-left"
               >
                 Every child eats differently. Build a meal box that fits their
                 taste, routine, and nutrition needs. Swap dishes, set
                 preferences, and add extras with a few quick taps.
               </p>
+            </div>
 
-              <button className="group inline-flex items-center gap-3 bg-black text-white px-8 py-4 rounded-tr-[16px] rounded-bl-[16px]
- font-semibold text-base hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                See The Menu
-                <span className="text-2xl font-bold group-hover:translate-x-1 transition-transform">
+            {/* Button below the image */}
+            <div className="flex justify-center lg:justify-start mt-8">
+              <button className="group relative items-center gap-3 bg-black text-white px-8 py-4 rounded-tr-[16px] rounded-bl-[16px] overflow-hidden font-semibold text-base shadow-lg hover:shadow-xl">
+                {/* WHITE BACKGROUND SLIDE IN FROM LEFT-BOTTOM */}
+                <span
+                  className="absolute inset-0 bg-white translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                  style={{
+                    clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                  }}
+                />
+
+                {/* WHITE BACKGROUND SLIDE IN FROM RIGHT-TOP */}
+                <span
+                  className="absolute inset-0 bg-white translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                  style={{
+                    clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                  }}
+                />
+
+                {/* Content */}
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                  See The Menu
+                </span>
+                <span className="relative z-10 text-xl font-bold transition-colors duration-300 group-hover:text-black">
                   →
                 </span>
               </button>

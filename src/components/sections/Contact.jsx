@@ -69,7 +69,7 @@ export default function Contact() {
     md:block
     h-[720px]
     w-auto
-    max-w-[620px]
+    max-w-[720px]
     object-contain
     select-none
   "
@@ -84,13 +84,13 @@ export default function Contact() {
 
 
           {/* content */}
-          <div className="relative z-10 px-8 py-12 md:py-14 md:pl-[520px] md:pr-14">
+          <div className="relative z-10 px-1 py-12 md:px-4 md:py-14 md:pl-[520px] md:pr-14">
             {/* Mobile image */}
             <div className="mb-8 flex justify-center md:hidden">
               <img
                 src={`/Naurished-kid-meal/assets/section8/inspyrenet2.png`}
                 alt="Child holding a lunchbox"
-                className="h-[260px] w-auto"
+                className="h-[400px] sm:h-[500px] w-full max-w-[550px] sm:max-w-[750px] object-contain"
               />
             </div>
 
@@ -175,15 +175,34 @@ export default function Contact() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-3 rounded-tr-[16px] rounded-bl-[16px] bg-black px-6 py-3 text-white shadow-[0_8px_18px_rgba(0,0,0,0.25)]"
+                    className="group relative inline-flex items-center gap-3 rounded-tr-[16px] rounded-bl-[16px] bg-white text-black px-6 py-3 overflow-hidden shadow-[0_8px_18px_rgba(0,0,0,0.25)]"
                     style={{
                       fontFamily: "'SK Synonym Grotesk Trial', sans-serif",
                       fontWeight: 600,
                       fontSize: "16px",
                     }}
                   >
-                    Submit
-                    <ArrowRightIcon className="h-5 w-5" />
+                    {/* LEFT-BOTTOM → CENTER */}
+                    <span
+                      className="absolute inset-0 bg-black translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                      style={{
+                        clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                      }}
+                    />
+
+                    {/* RIGHT-TOP → CENTER */}
+                    <span
+                      className="absolute inset-0 bg-black translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                      style={{
+                        clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                      }}
+                    />
+
+                    {/* Content */}
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                      Submit
+                    </span>
+                    <ArrowRightIcon className="relative z-10 h-5 w-5 transition-colors duration-300 group-hover:text-white group-hover:translate-x-1" />
                   </button>
                 </div>
               </form>

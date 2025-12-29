@@ -96,23 +96,23 @@ export default function PricingPlans() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden z-30 -mt-[100px]"
+      className="relative overflow-hidden z-30 min-h-[400px] sm:min-h-[500px] -mt-[40px] sm:-mt-[80px] md:-mt-[100px]"
     >
 
       {/* Top photo strip (visible above the wave) */}
-      <div className="relative sm:h-[140px] md:h-[160px] z-10" aria-hidden="true" />
+      <div className="relative h-[80px] sm:h-[140px] md:h-[160px] z-10" aria-hidden="true" />
 
         {/* Beige wave mask (top + bottom curves + soft shadow) */}
         <img
           src={`/Naurished-kid-meal/assets/wave for 5th section.png`}
           alt=""
           draggable="false"
-          className="absolute inset-0 w-[100%] object-fill pointer-events-none h-full select-none"
+          className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
           style={{ display: "block", verticalAlign: "top" }}
         />
 
         {/* Content */}
-        <div className="relative z-10 mx-auto max-w-[1200px] px-6 pb-40 md:px-10 text-center">
+        <div className="relative z-10 mx-auto max-w-[1200px] px-6 pt-8 pb-20 sm:pt-12 sm:pb-32 md:px-10 md:pb-40 text-center">
         {/* Pill */}
         <div ref={pillRef} className="flex justify-center mb-5">
           <div className="inline-flex items-center gap-2 bg-white rounded-full px-5 py-2 shadow-md">
@@ -248,10 +248,29 @@ export default function PricingPlans() {
                   <FeatureRow>Nutrition tracking</FeatureRow>
                 </div>
 
-                <button className="w-full bg-black text-white rounded-tr-[16px] rounded-bl-[16px]  py-3"
+                <button className="group relative w-full bg-black text-white rounded-tr-[16px] rounded-bl-[16px] py-3 overflow-hidden"
                   style={{ fontFamily: "'SK Synonym Grotesk Trial', sans-serif", fontWeight: 600, fontSize: "16px" }}
                 >
-                  Subscribe Now
+                  {/* LEFT-BOTTOM → CENTER */}
+                  <span
+                    className="absolute inset-0 bg-white translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                    style={{
+                      clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                    }}
+                  />
+
+                  {/* RIGHT-TOP → CENTER */}
+                  <span
+                    className="absolute inset-0 bg-white translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                    style={{
+                      clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                    }}
+                  />
+
+                  {/* Content */}
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                    Subscribe Now
+                  </span>
                 </button>
               </div>
 
@@ -322,10 +341,29 @@ export default function PricingPlans() {
                     <FeatureRow dark>Nutrition tracking</FeatureRow>
                   </div>
 
-                  <button className="w-full bg-white text-black rounded-tr-[16px] rounded-bl-[16px]  py-3"
+                  <button className="group relative w-full bg-white text-black rounded-tr-[16px] rounded-bl-[16px] py-3 overflow-hidden"
                     style={{ fontFamily: "'SK Synonym Grotesk Trial', sans-serif", fontWeight: 700, fontSize: "16px" }}
                   >
-                    Subscribe Now
+                    {/* LEFT-BOTTOM → CENTER */}
+                    <span
+                      className="absolute inset-0 bg-black translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                      style={{
+                        clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                      }}
+                    />
+
+                    {/* RIGHT-TOP → CENTER */}
+                    <span
+                      className="absolute inset-0 bg-black translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                      style={{
+                        clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                      }}
+                    />
+
+                    {/* Content */}
+                    <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                      Subscribe Now
+                    </span>
                   </button>
                 </div>
               </div>
@@ -397,10 +435,29 @@ export default function PricingPlans() {
                 <FeatureRow>Nutrition tracking</FeatureRow>
               </div>
 
-              <button className="w-full bg-black text-white rounded-tr-[16px] rounded-bl-[16px]  py-3"
+              <button className="group relative w-full bg-black text-white rounded-tr-[16px] rounded-bl-[16px] py-3 overflow-hidden"
                 style={{ fontFamily: "'SK Synonym Grotesk Trial', sans-serif", fontWeight: 600, fontSize: "16px" }}
               >
-                Subscribe Now
+                {/* LEFT-BOTTOM → CENTER */}
+                <span
+                  className="absolute inset-0 bg-white translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                  style={{
+                    clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                  }}
+                />
+
+                {/* RIGHT-TOP → CENTER */}
+                <span
+                  className="absolute inset-0 bg-white translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                  style={{
+                    clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                  }}
+                />
+
+                {/* Content */}
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-black">
+                  Subscribe Now
+                </span>
               </button>
               </div>
 

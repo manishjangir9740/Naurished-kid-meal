@@ -1,10 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function Benefits() {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Track screen size for responsive background positioning
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -82,19 +95,18 @@ export default function Benefits() {
     >
       <div>
           <div
-            className="absolute top-0 inset-0  h-full bg-no-repeat bg-cover"
+            className="absolute inset-0 bg-no-repeat bg-cover"
             style={{
               backgroundImage: "url('/Naurished-kid-meal/assets/section4/bg_images.jpg')",
-              backgroundPosition: "right center",
+              backgroundPosition: isDesktop ? "right center" : "center",
             }}
           />
 
-
           {/* Content */}
-          <div className="relative sm:py-14 -mt-[112px] md:px-14 md:py-50">
-            <div ref={contentRef} className="max-w-[560px]">
+          <div className="relative px-4 py-12 sm:px-6 sm:py-16 md:px-14 md:py-50 lg:px-16">
+            <div ref={contentRef} className="max-w-[560px] mx-auto lg:mx-0">
               {/* Pill */}
-              <div className="inline-flex items-center bg-white px-4 py-2 rounded-full shadow-sm mb-6">
+              <div className="inline-flex items-center bg-white px-4 py-2 rounded-full shadow-sm mb-6 mx-auto lg:mx-0">
                 <span
                   className="text-sm font-semibold tracking-wide text-gray-800"
                   style={{
@@ -108,11 +120,11 @@ export default function Benefits() {
 
               {/* Heading */}
               <h2
-                className="text-black mb-6"
+                className="text-black mb-6 text-center lg:text-left"
                 style={{
                   fontFamily: "'Chillax', sans-serif",
                   fontWeight: 700,
-                  fontSize: "clamp(36px, 4.8vw, 56px)",
+                  fontSize: "clamp(32px, 5vw, 56px)",
                   lineHeight: "1.08",
                 }}
               >
@@ -121,11 +133,11 @@ export default function Benefits() {
 
               {/* Paragraph */}
               <p
-                className="text-[#6B6B6B] mb-10 max-w-[520px]"
+                className="text-[#6B6B6B] mb-10 max-w-[520px] text-center lg:text-left"
                 style={{
                   fontFamily: "'SK Synonym Grotesk Trial', sans-serif",
                   fontWeight: 400,
-                  fontSize: "clamp(15px, 2vw, 16px)",
+                  fontSize: "clamp(15px, 2vw, 18px)",
                   lineHeight: "1.65",
                 }}
               >
@@ -135,7 +147,7 @@ export default function Benefits() {
               </p>
 
               {/* Benefits Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-6 gap-x-10 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 sm:gap-y-6 gap-x-4 sm:gap-x-8 lg:gap-x-10 mb-10">
                 {benefits.map((item, index) => (
                   <div key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 text-black shrink-0">
@@ -156,19 +168,38 @@ export default function Benefits() {
               </div>
 
               {/* CTA Button */}
-              <button className="group inline-flex items-center gap-3 bg-black text-white px-6 py-3 rounded-tr-[16px] rounded-bl-[16px] font-medium transition-all hover:bg-gray-800 hover:shadow-lg">
-                <span
-                  style={{
-                    fontFamily: "'SK Synonym Grotesk Trial', sans-serif",
-                    fontWeight: 600,
-                  }}
-                >
-                  Know More...
-                </span>
-                <span className="group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-              </button>
+              <div className="flex justify-center lg:justify-start">
+                <button className="group relative inline-flex items-center gap-3 bg-black text-white px-6 py-3 rounded-tr-[16px] rounded-bl-[16px] font-medium overflow-hidden text-sm sm:text-base">
+                  {/* LEFT-BOTTOM → CENTER */}
+                  <span
+                    className="absolute inset-0 bg-white translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                    style={{
+                      clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                    }}
+                  />
+
+                  {/* RIGHT-TOP → CENTER */}
+                  <span
+                    className="absolute inset-0 bg-white translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                    style={{
+                      clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                    }}
+                  />
+
+                  {/* Content */}
+                  <span className="relative z-10 transition-colors duration-300 group-hover:text-black"
+                    style={{
+                      fontFamily: "'SK Synonym Grotesk Trial', sans-serif",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Know More...
+                  </span>
+                  <span className="relative z-10 text-xl font-bold transition-colors duration-300 group-hover:text-black group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
           </div>

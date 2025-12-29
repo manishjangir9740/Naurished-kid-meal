@@ -7,6 +7,7 @@ export default function Testimonials() {
   const cardRef = useRef(null);
   const quoteRef = useRef(null);
   const [active, setActive] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const testimonials = useMemo(
     () => [
@@ -67,6 +68,18 @@ export default function Testimonials() {
     );
   }, [active]);
 
+  // Track screen size for responsive background
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
   const prev = () => setActive((p) => (p - 1 + testimonials.length) % testimonials.length);
   const next = () => setActive((p) => (p + 1) % testimonials.length);
 
@@ -85,29 +98,30 @@ export default function Testimonials() {
       <div className="relative mx-auto max-w-[1200px] px-6 md:px-10 flex justify-center">
         <div
           ref={cardRef}
-          className="relative w-full max-w-[1200px] mx-auto h-[500px]"
+          className="relative w-full max-w-[1200px] mx-auto h-[500px] rounded-sm sm:h-[500px] md:h-[550px] flex items-center justify-center"
         >
           {/* background (keep image unchanged) */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 flex justify-center items-center"
+            className="pointer-events-none absolute inset-0 flex justify-center items-center rounded-[30px] md:rounded-none"
             style={{
               backgroundImage: "url('/Naurished-kid-meal/assets/section6/Vector 7.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundSize: window.innerWidth < 768 ? "cover" : "contain",
+              backgroundPosition: window.innerWidth < 768 ? "center bottom" : "center",
+              backgroundRepeat: "no-repeat",
             }}
           />
 
           {/* content (fit inside trapezoid safe-area) */}
           <div
-            className="relative z-10 flex flex-col items-center text-center"
+            className="relative z-10 flex flex-col items-center text-center w-full h-full justify-center px-4 "
             style={{
-             
+
             }}
           >
             {/* pill */}
-            <div className="flex justify-center py-4">
-              <div className="inline-flex items-center rounded-full bg-[#F8F5EE] px-5 py-2">
+            <div className="flex justify-center py-2 sm:py-4">
+              <div className="inline-flex items-center rounded-full bg-[#F8F5EE] px-4 sm:px-5 py-2">
                 <span
                   style={{
                     fontFamily: "'SK Synonym Grotesk Trial', sans-serif",
@@ -147,7 +161,7 @@ export default function Testimonials() {
           </p>
 
           {/* quote */}
-          <div ref={quoteRef} className="mt-10 text-center">
+          <div ref={quoteRef} className="mt-6 sm:mt-8 md:mt-10 text-center">
             <div
               className="text-black"
               style={{
@@ -210,22 +224,54 @@ export default function Testimonials() {
           </div>
 
           {/* controls */}
-          <div className="mt-5 flex items-center justify-center gap-4">
+          <div className="mt-4 sm:mt-5 flex items-center justify-center gap-4">
             <button
               type="button"
               onClick={prev}
-              className="h-10 w-10 rounded-full bg-[#EDEDED] text-black flex items-center justify-center hover:bg-[#E2E2E2] transition-colors"
+              className="group relative h-10 w-10 rounded-full bg-[#EDEDED] text-black flex items-center justify-center overflow-hidden transition-colors"
               aria-label="Previous testimonial"
             >
-              <span className="text-lg leading-none">←</span>
+              {/* LEFT-BOTTOM → CENTER */}
+              <span
+                className="absolute inset-0 bg-black translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                style={{
+                  clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                }}
+              />
+
+              {/* RIGHT-TOP → CENTER */}
+              <span
+                className="absolute inset-0 bg-black translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                style={{
+                  clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                }}
+              />
+
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-white text-lg leading-none">←</span>
             </button>
             <button
               type="button"
               onClick={next}
-              className="h-10 w-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-[#1a1a1a] transition-colors"
+              className="group relative h-10 w-10 rounded-full bg-black text-white flex items-center justify-center overflow-hidden transition-colors"
               aria-label="Next testimonial"
             >
-              <span className="text-lg leading-none">→</span>
+              {/* LEFT-BOTTOM → CENTER */}
+              <span
+                className="absolute inset-0 bg-white translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                style={{
+                  clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                }}
+              />
+
+              {/* RIGHT-TOP → CENTER */}
+              <span
+                className="absolute inset-0 bg-white translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                style={{
+                  clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                }}
+              />
+
+              <span className="relative z-10 transition-colors duration-300 group-hover:text-black text-lg leading-none">→</span>
             </button>
           </div>
           </div>

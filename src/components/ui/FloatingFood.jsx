@@ -1,7 +1,17 @@
 import { motion, useMotionValue, useTransform, useScroll } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const items = [
+// Mobile-only food items (keep only these on mobile to improve text visibility)
+const mobileItems = [
+  { src: "/Naurished-kid-meal/assets/floating/bread.png", top: "19%", left: "-7%", size: 200, d: 0.015, rotate: -15, delay: 0.1 },
+  { src: "/Naurished-kid-meal/assets/floating/tomato-full.png", top: "75%", left: "-2%", size: 150, d: 0.018, rotate: 10, delay: 0.3 },
+  { src: "/Naurished-kid-meal/assets/floating/graps.png", top: "18%", left: "40%", size: 85, d: 0.02, rotate: 15, delay: 0.5 },
+  { src: "/Naurished-kid-meal/assets/floating/bbb.png", top: "8%", left: "90%", size: 320, d: 0.023, rotate: -25, delay: 0.8 },
+  { src: "/Naurished-kid-meal/assets/floating/akarot (1).png", top: "86%", left: "37%", size: 370, d: 0.017, rotate: 15, delay: 1.0 },
+];
+
+// Desktop food items (all items for desktop)
+const desktopItems = [
   { src: "/Naurished-kid-meal/assets/floating/bread.png", top: "19%", left: "-7%", size: 200, d: 0.015, rotate: -15, delay: 0.1 },
   // LEFT SIDE
   { src: "/Naurished-kid-meal/assets/floating/tomato-full.png", top: "75%", left: "-2%", size: 150, d: 0.018, rotate: 10, delay: 0.3 },
@@ -33,7 +43,8 @@ const items = [
   
 ];
 
-export default function FloatingFood() {
+// Reusable FloatingFoodItem component
+function FloatingFoodItem({ items }) {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const { scrollY } = useScroll();
@@ -46,31 +57,64 @@ export default function FloatingFood() {
       mouseX.set(e.clientX - centerX);
       mouseY.set(e.clientY - centerY);
     };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
+    if (typeof window !== 'undefined') {
+      window.addEventListener("mousemove", move);
+      return () => window.removeEventListener("mousemove", move);
+    }
   }, [mouseX, mouseY]);
 
-  // Calculate lunchbox center position
+  // Calculate lunchbox center position - more robust detection
   useEffect(() => {
+    let intervalId;
+
     const updateLunchboxPosition = () => {
       const lunchboxElement = document.querySelector('img[alt="Meal box"]');
       if (lunchboxElement) {
         const rect = lunchboxElement.getBoundingClientRect();
-        setLunchboxCenter({
+        const newCenter = {
           x: rect.left + rect.width / 2,
-          y: rect.top + rect.height / 2 + window.scrollY
-        });
+          y: rect.top + rect.height / 2 + (typeof window !== 'undefined' ? window.scrollY : 0)
+        };
+        setLunchboxCenter(newCenter);
+        // console.log('Lunchbox found and positioned:', newCenter);
+
+        // Clear interval once found
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      } else {
+        console.log('Lunchbox element not found yet');
       }
     };
 
-    // Update on mount and resize
+    // Update immediately
     updateLunchboxPosition();
-    window.addEventListener('resize', updateLunchboxPosition);
-    
-    // Also update after images load
-    setTimeout(updateLunchboxPosition, 1000);
-    
-    return () => window.removeEventListener('resize', updateLunchboxPosition);
+
+    // Keep checking until found (for cases where MealBuilder loads after FloatingFood)
+    if (typeof window !== 'undefined') {
+      intervalId = setInterval(updateLunchboxPosition, 500);
+
+      // Also update on resize and scroll
+      window.addEventListener('resize', updateLunchboxPosition);
+      window.addEventListener('scroll', updateLunchboxPosition);
+
+      // Stop checking after 10 seconds to avoid infinite polling
+      setTimeout(() => {
+        if (intervalId) {
+          clearInterval(intervalId);
+        }
+      }, 10000);
+    }
+
+    return () => {
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', updateLunchboxPosition);
+        window.removeEventListener('scroll', updateLunchboxPosition);
+      }
+    };
   }, []);
 
   return (
@@ -153,5 +197,21 @@ export default function FloatingFood() {
         );
       })}
     </div>
+  );
+}
+
+export default function FloatingFood() {
+  return (
+    <>
+      {/* Mobile version - visible on screens smaller than md (768px) */}
+      <div className="md:hidden">
+        <FloatingFoodItem items={mobileItems} />
+      </div>
+
+      {/* Desktop version - visible on screens md and larger (768px+) */}
+      <div className="hidden md:block">
+        <FloatingFoodItem items={desktopItems} />
+      </div>
+    </>
   );
 }
