@@ -114,7 +114,7 @@ export default function MealBuilder() {
       if (lunchboxRef.current) {
         gsap.to(lunchboxRef.current, {
           y: window.innerHeight * 1.2, // Move down by 120% of viewport height (longer distance)
-          x: window.innerWidth * 0.4, // Move right by 40% of viewport width
+          x: Math.min(window.innerWidth * 0.2, 200), // Move right by max 20% of viewport or 200px (prevent overflow)
           rotation: 360, // Rotate 360 degrees (one full rotation)
           opacity: 0, // Fade out completely
           ease: "none",
