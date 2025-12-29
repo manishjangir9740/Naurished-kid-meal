@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default function Section2() {
+export default function MealBuilder() {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
   const contentRef = useRef(null);

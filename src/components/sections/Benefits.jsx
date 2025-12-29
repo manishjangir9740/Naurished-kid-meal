@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default function Section4() {
+export default function Benefits() {
   const sectionRef = useRef(null);
   const contentRef = useRef(null);
 

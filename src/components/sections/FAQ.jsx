@@ -38,7 +38,7 @@ function CloseIcon({ className = "" }) {
   );
 }
 
-export default function Section7() {
+export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(1); // match screenshot: 2nd item opened by default
 
   const faqs = useMemo(

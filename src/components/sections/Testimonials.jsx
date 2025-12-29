@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default function Section6() {
+export default function Testimonials() {
   const sectionRef = useRef(null);
   const cardRef = useRef(null);
   const quoteRef = useRef(null);

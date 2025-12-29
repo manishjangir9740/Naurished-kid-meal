@@ -1,14 +1,14 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Section2 from "./components/Section2";
-import Section3 from "./components/Section3";
-import Section4 from "./components/Section4";
-import Section5 from "./components/Section5";
-import Section6 from "./components/Section6";
-import Section7 from "./components/Section7";
-import Section8 from "./components/Section8";
-import Footer from "./components/Footer";
-import FloatingFood from "./components/FloatingFood";
+import Navbar from "./components/ui/Navbar";
+import Hero from "./components/sections/Hero";
+import MealBuilder from "./components/sections/MealBuilder";
+import AgeGroupsMenu from "./components/sections/AgeGroupsMenu";
+import Benefits from "./components/sections/Benefits";
+import PricingPlans from "./components/sections/PricingPlans";
+import Testimonials from "./components/sections/Testimonials";
+import FAQ from "./components/sections/FAQ";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/ui/Footer";
+import FloatingFood from "./components/ui/FloatingFood";
 
 export default function App() {
   return (
@@ -16,13 +16,13 @@ export default function App() {
         <FloatingFood />
         <Navbar />
         <Hero />
-        <Section2 />
-        <Section3 />
-        <Section4 />
-        <Section5 />
-        <Section6 />
-        <Section7 />
-        <Section8 />
+        <MealBuilder />
+        <AgeGroupsMenu />
+        <Benefits />
+        <PricingPlans />
+        <Testimonials />
+        <FAQ />
+        <Contact />
         <Footer />
       
     </>

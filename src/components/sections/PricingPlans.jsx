@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default function Section5() {
+export default function PricingPlans() {
   const sectionRef = useRef(null);
   const pillRef = useRef(null);
   const headingRef = useRef(null);

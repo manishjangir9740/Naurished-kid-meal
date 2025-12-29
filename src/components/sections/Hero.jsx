@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import VerifiedDeliverySlider from "./FeatureSlider";
+import VerifiedDeliverySlider from "../features/VerifiedDeliverySlider";
 
 export default function Hero() {
   const sectionRef = useRef(null);

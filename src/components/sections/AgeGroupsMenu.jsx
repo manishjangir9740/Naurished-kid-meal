@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-export default function Section3() {
+export default function AgeGroupsMenu() {
   const sectionRef = useRef(null);
   const badgeRef = useRef(null);
   const headingRef = useRef(null);

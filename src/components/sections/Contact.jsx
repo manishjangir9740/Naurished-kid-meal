@@ -27,7 +27,7 @@ function ArrowRightIcon({ className = "" }) {
   );
 }
 
-export default function Section8() {
+export default function Contact() {
   const onSubmit = useCallback((e) => {
     e.preventDefault();
   }, []);
