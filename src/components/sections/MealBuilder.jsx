@@ -146,12 +146,9 @@ export default function MealBuilder() {
   className="
     pointer-events-none
     absolute
-    -top-[5.75rem]
-    left-[40%]
-    w-[280px]
-    sm:w-[320px]
-    md:w-[360px]
-    lg:w-[420px]
+    -top-[3rem] sm:-top-[4rem] md:-top-[5rem] lg:-top-[5.75rem]
+    left-[30%] sm:left-[35%] md:left-[40%]
+    w-[200px] sm:w-[280px] md:w-[320px] lg:w-[420px]
   "
 >
   <div className="relative">

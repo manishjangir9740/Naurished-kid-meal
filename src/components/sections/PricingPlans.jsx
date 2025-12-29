@@ -220,7 +220,7 @@ export default function PricingPlans() {
 
                 <h3
                   className="text-black mt-4"
-                  style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 600, fontSize: "26px" }}
+                  style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 600, fontSize: "clamp(20px, 4vw, 26px)" }}
                 >
                   Daily Plan
                 </h3>
@@ -294,7 +294,7 @@ export default function PricingPlans() {
 
                   <h3
                     className="text-white mt-4"
-                    style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 600, fontSize: "26px" }}
+                    style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 600, fontSize: "clamp(20px, 4vw, 26px)" }}
                   >
                     Weekly Plan
                   </h3>
@@ -369,7 +369,7 @@ export default function PricingPlans() {
 
               <h3
                 className="text-black mt-4"
-                style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 600, fontSize: "26px" }}
+                style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 600, fontSize: "clamp(20px, 4vw, 26px)" }}
               >
                 Monthly Plan
               </h3>

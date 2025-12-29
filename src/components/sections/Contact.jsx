@@ -94,7 +94,7 @@ export default function Contact() {
               />
             </div>
 
-            <div className="max-w-[620px] p-[40px]">
+            <div className="max-w-[620px] p-6 sm:p-8 md:p-10">
               <h2
                 className="text-black"
                 style={{

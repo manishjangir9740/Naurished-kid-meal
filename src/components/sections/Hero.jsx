@@ -67,9 +67,9 @@ export default function Hero() {
     >
       <div
         ref={contentRef}
-        className="relative z-60 mx-auto max-w-[1400px] pl-6 md:px-10 pt-32 md:pt-44 pb-20 md:pb-60 "
+        className="relative z-60 mx-auto max-w-[1400px] px-4 sm:px-6 md:px-10 pt-24 sm:pt-32 md:pt-44 pb-16 sm:pb-20 md:pb-60"
       >
-        <div className="relative flex flex-col lg:flex-row items-center lg:items-start">
+        <div className="relative flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-0">
 
 
           {/* LEFT CONTENT */}
@@ -77,8 +77,8 @@ export default function Hero() {
             {/* Main Heading */}
             <h1
               ref={headingRef}
-              style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 700, fontSize: "56px", lineHeight: "1.1" }}
-              className="text-white drop-shadow-lg"
+              style={{ fontFamily: "'Chillax', sans-serif", fontWeight: 700, fontSize: "clamp(32px, 8vw, 56px)", lineHeight: "1.1" }}
+              className="text-white drop-shadow-lg text-center lg:text-left"
             >
               Good Food. Happy
               Kids. Zero Worry.
@@ -87,8 +87,8 @@ export default function Hero() {
             {/* Subtitle */}
             <p
               ref={paraRef}
-              style={{ fontFamily: "'SK Synonym Grotesk Trial', sans-serif", fontWeight: 500, fontSize: "20px", lineHeight: "1.6" }}
-              className="mt-6 max-w-[580px] text-white"
+              style={{ fontFamily: "'SK Synonym Grotesk Trial', sans-serif", fontWeight: 500, fontSize: "clamp(16px, 4vw, 20px)", lineHeight: "1.6" }}
+              className="mt-6 max-w-[580px] text-white text-center lg:text-left"
             >
               We cook fresh vegetarian meals and deliver them straight to your
               child's school or hostel. You get transparency, safety, and meals
@@ -100,11 +100,42 @@ export default function Hero() {
               <VerifiedDeliverySlider />
             </div>
 
-            {/* CTA Button */}
+            {/* Mobile CTA Button */}
+            <div className="flex justify-center lg:hidden mt-8">
+              <button
+                className="group relative items-center gap-2 bg-white px-6 py-3 font-bold text-black text-base rounded-tr-[16px] rounded-bl-[16px] overflow-hidden"
+              >
+                {/* LEFT-BOTTOM → CENTER */}
+                <span
+                  className="absolute inset-0 bg-black translate-x-[-100%] translate-y-[100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                  style={{
+                    clipPath: "polygon(0% 100%, 0% 0%, 110% 100%)"
+                  }}
+                />
+
+                {/* RIGHT-TOP → CENTER */}
+                <span
+                  className="absolute inset-0 bg-black translate-x-[100%] translate-y-[-100%] transition-transform duration-400 ease-in-out group-hover:translate-x-0 group-hover:translate-y-0"
+                  style={{
+                    clipPath: "polygon(100% 0%, 0% 0%, 100% 100%)"
+                  }}
+                />
+
+                {/* Content */}
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+                  Book Your Kid Meal Now
+                </span>
+                <span className="relative z-10 text-xl font-bold transition-colors duration-300 group-hover:text-white">
+                  →
+                </span>
+              </button>
+            </div>
+
+            {/* Desktop CTA Button */}
             <button
-              className="hidden lg:flex group mt-6 relative items-center gap-2 
-             bg-white px-6 py-3 font-bold text-black text-base 
-             rounded-tr-[16px] rounded-bl-[16px] 
+              className="hidden lg:flex group mt-6 relative items-center gap-2
+             bg-white px-6 py-3 font-bold text-black text-base
+             rounded-tr-[16px] rounded-bl-[16px]
              overflow-hidden"
             >
               {/* LEFT-BOTTOM → CENTER */}
@@ -139,25 +170,36 @@ export default function Hero() {
             </button>
           </div>
 
-          {/* RIGHT IMAGE */}
-          <div
-            ref={imageWrapRef}
-            className="hidden lg:flex justify-center w-full lg:justify-end relative"
-          >
-            <img
-              src={`/Naurished-kid-meal/assets/hero-boy.png`}
-              alt="Happy kid with meal"
-              className="max-w-[1200px] xl:max-w-[800px] 2xl:max-w-[900px] w-full object-contain"
-            />
-          </div>
+         {/* RIGHT IMAGE */}
+<div
+  ref={imageWrapRef}
+  className="relative flex justify-center w-full lg:justify-end order-last"
+>
+  <img
+    src="/Naurished-kid-meal/assets/hero-boy.png"
+    alt="Happy kid with meal"
+    className="
+      w-full
+      max-w-[1280px]
+      sm:max-w-[350px]
+      md:max-w-[450px]
+      lg:max-w-[600px]
+      xl:max-w-[800px]
+      2xl:max-w-[900px]
+      object-contain
+      [clip-path:ellipse(80%_100%_at_50%_0%)]
+    "
+  />
+</div>
+
 
         </div>
       </div>
 
       {/* Wave Bottom */}
       <img
-        src={`/Naurished-kid-meal/assets/wave-bottom.png`} 
-        className="absolute bottom-0 w-full select-none pointer-events-none" 
+        src={`/Naurished-kid-meal/assets/wave-bottom.png`}
+        className="absolute inset-0 w-full h-full  min-h-[105dvh]  d:min-h-[600px] object-cover  select-none pointer-events-none "
         alt=""
       />
     </section>
