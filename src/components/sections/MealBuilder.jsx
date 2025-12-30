@@ -113,17 +113,17 @@ export default function MealBuilder() {
       // Parallax scroll animation for birefnet.png - image rotates, moves from right to bottom with scroll and disappears when white wave appears
       if (lunchboxRef.current) {
         gsap.to(lunchboxRef.current, {
-          y: window.innerHeight * 1.2, // Move down by 120% of viewport height (longer distance)
-          x: Math.min(window.innerWidth * 0.2, 200), // Move right by max 20% of viewport or 200px (prevent overflow)
+          y: window.innerHeight * 2.0, // Move down by 120% of viewport height (longer distance)
+          x: Math.min(window.innerWidth * 0.2, 250), // Move right by max 20% of viewport or 200px (prevent overflow)
           rotation: 360, // Rotate 360 degrees (one full rotation)
           opacity: 0, // Fade out completely
           ease: "none",
           scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top", // Start when MealBuilder section reaches top of viewport
-            end: "bottom -50%", // End when bottom of MealBuilder is 50% past viewport top (extends animation)
+            trigger: "body", // Use body as trigger for global scroll progress
+            start: () => sectionRef.current.offsetTop + " top", // Start when MealBuilder section reaches top
+            end: () => (sectionRef.current.offsetTop + sectionRef.current.offsetHeight + window.innerHeight) + " top", // End when next section is visible
             scrub: true, // Smooth parallax effect tied to scroll
-            // This ensures animation continues until the next section (white wave) is visible
+            // Animation continues until white wave section becomes fully visible
           }
         });
       }
